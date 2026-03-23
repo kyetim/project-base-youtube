@@ -28,10 +28,16 @@ app.use((req, res, next) => {
 
 app.use('/api', require("./routes/index"));
 
-
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404));
+});
+
+// 404 middleware en sonda olmalı
+app.use((req, res, next) => {
+  const error = new Error("Not Found");
+  error.status = 404;
+  next(error);
 });
 
 // error handler
