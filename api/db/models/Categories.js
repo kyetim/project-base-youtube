@@ -2,11 +2,11 @@ const mongoose = require("mongoose")
 
 
 const schema = mongoose.Schema({
+    name: { type: String, required: true },
     is_active: { type: Boolean, default: true },
 
     create_by: {
-        type: mongoose.SchemaTypes.ObjectId,
-        required: true
+        type: mongoose.SchemaTypes.ObjectId
     },
 
 }, {
