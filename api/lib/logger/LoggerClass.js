@@ -9,9 +9,7 @@ class LoggerClass {
     }
 
     _createLogObject(email, location, proc_type, log) {
-        return {
-            email, location, proc_type, log
-        }
+        return { email, location, proc_type, log };
     }
 
     info(email, location, proc_type, log) {
